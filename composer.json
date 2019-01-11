@@ -1,14 +1,14 @@
 {
-    "name": "laravel-admin-ext/exoption",
-    "description": "description...",
+    "name": "hobby/exoption",
+    "description": "laravel-admin extension",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/laravel-admin-ext/exoption",
+    "homepage": "https://github.com/maojindao55/exoption",
     "license": "MIT",
     "authors": [
         {
-            "name": "your name",
-            "email": "your email"
+            "name": "hobby",
+            "email": "hobby0524@gmail.com"
         }
     ],
     "require": {
