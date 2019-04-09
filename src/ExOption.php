@@ -88,6 +88,11 @@ class ExOption extends Field
                 return false;
         }
     })
+    //去除选项符号A、B、C、D、
+    $(".options_text_").blur(function(){
+       var val = $(this).val().replace(/^[A-Z][、\.]/g, '');
+       $(this).val(val);
+    })
 })()
 EOT;
         return parent::render();
