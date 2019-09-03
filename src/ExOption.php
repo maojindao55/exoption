@@ -59,11 +59,12 @@ class ExOption extends Field
         $("#exoption-group").append(exoption_item.replace(new RegExp('{letter}', 'g'), label));
     })
     $("#del-ex-option").click(function () {
-        if($(".exoption-item").length < 5) {
+        if($(".exoption-item").length < 4) {
             alert('不能再删除了');
             return false;
         }
         var id = $(".exoption-item").last().attr("status-index");
+        var id = null;
         if(id) {
             $("#"+id).val(0);
             $(".exoption-item").last().hide();
@@ -78,6 +79,13 @@ class ExOption extends Field
          if(type == 1 && checkedNum > 1) { alert('单选题只能选1项'); return false;}
     })
     $(":submit").click(function(){
+         $(".exoption-item input[type=text]").each(function(){
+            if($(this).val()=='')
+            {
+                alert('选项内容不能为空');
+                return false;
+            }
+         });
          var type = $("select[name=type] option:selected").val();
          var checkedNum =  $(".iskey:checked").length;
         if(type == 1 && checkedNum != 1) {
