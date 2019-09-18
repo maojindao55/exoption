@@ -79,14 +79,16 @@ class ExOption extends Field
          if(type == 1 && checkedNum > 1) { alert('单选题只能选1项'); return false;}
     })
     $(":submit").click(function(){
-         $(".exoption-item input[type=text]").each(function(){
+         var type = $("select[name=type] option:selected").val();
+         if(type == 1 || type == 2) {
+           $(".exoption-item input[type=text]").each(function(){
             if($(this).val()=='')
             {
                 alert('选项内容不能为空');
                 return false;
             }
-         });
-         var type = $("select[name=type] option:selected").val();
+           });
+         }
          var checkedNum =  $(".iskey:checked").length;
         if(type == 1 && checkedNum != 1) {
                 alert('单选题至少并且仅能选1项');
